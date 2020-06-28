@@ -74,7 +74,7 @@ export default class Sticky extends Component {
     const wasSticky = !!this.state.isSticky;
     const isSticky = preventingStickyStateChanges
       ? wasSticky
-      : distanceFromTop + (this.props.offsetWhenSticky || 0) <= -this.props.topOffset &&
+      : distanceFromTop - (this.props.offsetWhenSticky || 0) <= -this.props.topOffset &&
         distanceFromBottom > -this.props.bottomOffset;
 
     distanceFromBottom =
